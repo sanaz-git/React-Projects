@@ -1,13 +1,13 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import Input from './components/Input';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Credit Card</h1>
-      </header>
+      {/* <img src={logo} className="App-logo" alt="logo" /> */}
+      <h1>Credit Card Validator With React</h1>
+      <Input />
     </div>
   );
 }
