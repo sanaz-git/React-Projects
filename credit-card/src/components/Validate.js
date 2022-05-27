@@ -86,7 +86,7 @@ const Validate = ({ input }) => {
   }
   console.log(answers);
 
-  return <div></div>;
+  return <div className="ul">{answers}</div>;
 };
 
 export default Validate;
