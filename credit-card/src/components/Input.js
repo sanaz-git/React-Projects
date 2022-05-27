@@ -1,102 +1,104 @@
 import React, { useState } from 'react';
+
 import chip from '../chip.png';
 import logo from '../logo.png';
+// import Check from './Check';
+import Validate from './Validate';
 
 const Input = () => {
   const [input, setInput] = useState('');
 
   // useEffect(() => {}, [input]);
 
-  // Input must be 16 characters
-  function numCharacters(input) {
-    // eslint-disable-next-line
-    if (input.length == 16) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+  // // Input must be 16 characters
+  // function numCharacters(input) {
+  //   // eslint-disable-next-line
+  //   if (input.length == 16) {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // }
 
-  // // All characters must be numbers
-  function checkNumber(input) {
-    let regEx = '^[0-9]+$';
+  // // // All characters must be numbers
+  // function checkNumber(input) {
+  //   let regEx = '^[0-9]+$';
 
-    if (input.match(regEx)) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-  // At least two different numbers should be represented
-  function twoDifferentNumbers(input) {
-    for (let i = 1; i < input.length; i++) {
-      if (input[0] !== input[i]) return true;
-    }
-    return false;
-  }
+  //   if (input.match(regEx)) {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // }
+  // // At least two different numbers should be represented
+  // function twoDifferentNumbers(input) {
+  //   for (let i = 1; i < input.length; i++) {
+  //     if (input[0] !== input[i]) return true;
+  //   }
+  //   return false;
+  // }
 
-  // The last number must be even
-  function lastNumIsEven(input) {
-    const lastDigit = input % 10;
-    // eslint-disable-next-line
-    if (lastDigit % 2 == 0) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+  // // The last number must be even
+  // function lastNumIsEven(input) {
+  //   const lastDigit = input % 10;
+  //   // eslint-disable-next-line
+  //   if (lastDigit % 2 == 0) {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // }
 
-  // The sum of all the numbers must be greater than 16
-  function sum(input) {
-    let sumOfNumbers = 0;
-    // eslint-disable-next-line
-    for (let i = 0; i < input.length; i++) {
-      sumOfNumbers += parseInt(input[i]);
-    }
+  // // The sum of all the numbers must be greater than 16
+  // function sum(input) {
+  //   let sumOfNumbers = 0;
+  //   // eslint-disable-next-line
+  //   for (let i = 0; i < input.length; i++) {
+  //     sumOfNumbers += parseInt(input[i]);
+  //   }
 
-    if (sumOfNumbers > 16) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+  //   if (sumOfNumbers > 16) {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // }
 
-  function validateCreditNumber() {
-    const answers = [];
-    // eslint-disable-next-line
-    if (
-      numCharacters(input) &&
-      checkNumber(input) &&
-      twoDifferentNumbers(input) &&
-      lastNumIsEven(input) &&
-      sum(input) === true
-    ) {
-      answers.push('your number is valid');
-    } else {
-      // eslint-disable-next-line
-      if (numCharacters(input) == false) {
-        answers.push('Input must be 16 characters');
-      }
-      // eslint-disable-next-line
-      if (checkNumber(input) == false) {
-        answers.push('All characters must be numbers');
-      }
-      // eslint-disable-next-line
-      if (twoDifferentNumbers(input) == false) {
-        answers.push('At least two different numbers should be represented');
-      }
-      // eslint-disable-next-line
-      if (lastNumIsEven(input) == false) {
-        answers.push('The last number must be even');
-      }
-      // eslint-disable-next-line
-      if (sum(input) == false) {
-        answers.push('The sum of all the numbers must be greater than 16');
-      }
-    }
-    const x = answers.join('\n');
-    console.log(x);
-  }
+  // function validateCreditNumber() {
+  //   const answers = [];
+
+  //   if (
+  //     numCharacters(input) &&
+  //     checkNumber(input) &&
+  //     twoDifferentNumbers(input) &&
+  //     lastNumIsEven(input) &&
+  //     sum(input) === true
+  //   ) {
+  //     answers.push('your number is valid');
+  //   } else {
+  //     if (numCharacters(input) === false) {
+  //       answers.push('Input must be 16 characters');
+  //     }
+
+  //     if (checkNumber(input) === false) {
+  //       answers.push('All characters must be numbers');
+  //     }
+
+  //     if (twoDifferentNumbers(input) === false) {
+  //       answers.push('At least two different numbers should be represented');
+  //     }
+
+  //     if (lastNumIsEven(input) === false) {
+  //       answers.push('The last number must be even');
+  //     }
+
+  //     if (sum(input) === false) {
+  //       answers.push('The sum of all the numbers must be greater than 16');
+  //     }
+  //   }
+  //   const x = answers.join('\n');
+  //   console.log(x);
+  // }
 
   return (
     <div>
@@ -130,7 +132,7 @@ const Input = () => {
             name="subject"
             type="submit"
             value="HTML"
-            onClick={validateCreditNumber}
+            onClick={Validate}
           >
             validate
           </button>
@@ -147,7 +149,9 @@ const Input = () => {
         </div>
       </div>
 
-      <validateCreditNumber input={input} />
+      {/* <validateCreditNumber input={input} /> */}
+      {/* <Check input={input} /> */}
+      <Validate input={input} />
     </div>
   );
 };
