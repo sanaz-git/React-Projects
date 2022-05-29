@@ -1,6 +1,3 @@
-// import React from 'react';
-// import Check from './Check';
-
 const Validate = ({ input }) => {
   // Input must be 16 characters
   function numCharacters(input) {
@@ -13,9 +10,9 @@ const Validate = ({ input }) => {
   }
 
   // All characters must be numbers
-  function checkNumber(num) {
+  function checkNumber(input) {
     let regEx = '^[0-9]+$';
-    if (num.match(regEx)) {
+    if (input.match(regEx)) {
       return true;
     } else {
       return false;
@@ -84,9 +81,17 @@ const Validate = ({ input }) => {
       answers.push('The sum of all the numbers must be greater than 16');
     }
   }
-  console.log(answers);
+  // console.log(answers);
 
-  return <div className="ul">{answers}</div>;
+  return (
+    <div>
+      <ul className="ul">
+        {answers.map((answer) => (
+          <li key={answer.toString()}>{answer}</li>
+        ))}
+      </ul>
+    </div>
+  );
 };
 
 export default Validate;

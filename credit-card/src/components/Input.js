@@ -33,6 +33,7 @@ const Input = () => {
             placeholder="Enter Credit number"
             onChange={(e) => setInput(e.target.value)}
           />
+
           <button
             className="btn1"
             name="subject"
