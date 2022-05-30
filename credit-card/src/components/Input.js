@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import chip from '../chip.png';
 import logo from '../logo.png';
-import Validate from './Validate';
+import Validate from '../lib/validate';
+import { Errors } from './Errors';
 
 const Input = () => {
   const [input, setInput] = useState('');
+
+  Validate(input);
 
   return (
     <div>
@@ -55,8 +58,7 @@ const Input = () => {
           </div>
         </div>
       </div>
-
-      <Validate input={input} />
+      <Errors />
     </div>
   );
 };
