@@ -1,14 +1,11 @@
 import React from 'react';
-import validate from '../lib/validate';
 
-export const Errors = (answers) => {
-  validate();
+export const Errors = ({ messages }) => {
   return (
     <div>
       <ul className="ul">
-        {answers.map((answer) => (
-          <li key={answer.toString()}>{answer}</li>
-        ))}
+        {messages &&
+          messages.map((message, index) => <li key={index}>{message}</li>)}
       </ul>
     </div>
   );

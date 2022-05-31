@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import chip from '../chip.png';
-import logo from '../logo.png';
 import Validate from '../lib/validate';
+import logo from '../logo.png';
 import { Errors } from './Errors';
 
 const Input = () => {
   const [input, setInput] = useState('');
+  const [messages, setMessages] = useState();
 
-  Validate(input);
+  const validation = () => {
+    setMessages(Validate(input));
+  };
 
   return (
     <div>
@@ -42,7 +45,7 @@ const Input = () => {
             name="subject"
             type="submit"
             value="HTML"
-            onClick={Validate}
+            onClick={validation}
           >
             validate
           </button>
@@ -58,7 +61,7 @@ const Input = () => {
           </div>
         </div>
       </div>
-      <Errors />
+      <Errors messages={messages} />
     </div>
   );
 };
