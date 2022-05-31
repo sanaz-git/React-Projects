@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import chip from '../chip.png';
+import chip from '../images/chip.png';
+import logo from '../images/logo.png';
 import Validate from '../lib/validate';
-import logo from '../logo.png';
 import { Errors } from './Errors';
 
 const Input = () => {
