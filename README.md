@@ -1,3 +1,3 @@
-# React-Projects
+# Credit Card Validator
 
-[Credit Card Validator](https://aquamarine-florentine-2f993b.netlify.app/)
+## Link to App ([Link](https://aquamarine-florentine-2f993b.netlify.app/))
